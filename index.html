@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIIIC 4.0 — Official Evaluation Portal / Portal Penilaian Rasmi</title>
+    <title>BIIC 4.0 — Official Evaluation Portal / Portal Penilaian Rasmi</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -17,10 +17,18 @@
     <!-- Main Container -->
     <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-800" id="form-container">
         
-        <!-- Header Banner Clean & Kemas -->
+        <!-- Header Banner Kreatif -->
         <div class="bg-gradient-to-br from-slate-950 via-emerald-950 to-teal-900 p-6 md:p-10 text-white relative overflow-hidden border-b border-emerald-500/20">
             
-            <!-- Latar Belakang Ambient Light (Glow Effect Ringkas) -->
+            <!-- LATAR BELAKANG LOGO BIIC 4.0 -->
+            <div class="absolute inset-0 flex items-center justify-center opacity-55 pointer-events-none select-none overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/d/1psMxai3V0E5NplPJrIc9VKgVrRnuNQ9z" alt="BIIC 4.0 Background Logo" class="w-full h-full object-cover filter brightness-125 contrast-110 drop-shadow-2xl scale-105">
+            </div>
+
+            <!-- Gradient Layer Nipis Untuk Mengekalkan Ketajaman Teks -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-emerald-950/65 to-teal-950/75 pointer-events-none"></div>
+
+            <!-- Latar Belakang Ambient Light (Glow Effect) -->
             <div class="absolute -top-24 -left-24 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-teal-400/15 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -35,25 +43,25 @@
                     
                     <div>
                         <div class="flex items-center justify-center md:justify-start gap-2 mb-1.5 flex-wrap">
-                            <span class="bg-emerald-400/15 text-emerald-300 border border-emerald-400/30 text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+                            <span class="bg-emerald-400/20 text-emerald-300 border border-emerald-400/40 text-[10px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider shadow-sm backdrop-blur-md">
                                 Portal Penilaian Rasmi / Official Portal
                             </span>
-                            <span class="bg-teal-400/10 text-teal-200 border border-teal-400/20 text-[10px] font-semibold px-2.5 py-0.5 rounded-full">
+                            <span class="bg-teal-400/20 text-teal-200 border border-teal-400/30 text-[10px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
                                 Versi 1.0
                             </span>
                         </div>
-                        <h1 class="text-2xl md:text-4xl font-black tracking-tight text-white drop-shadow-md">
-                            BIIIC 4.0 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">JUDGING SYSTEM</span>
+                        <h1 class="text-2xl md:text-4xl font-black tracking-tight text-white drop-shadow-lg">
+                            BIIC 4.0 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 to-teal-200">JUDGING SYSTEM</span>
                         </h1>
-                        <p class="text-xs md:text-sm text-slate-300 font-medium mt-1">
+                        <p class="text-xs md:text-sm text-slate-200 font-medium mt-1 drop-shadow-sm">
                             Borneo Innovation and Invention Competition • AI & Green Technology
                         </p>
                     </div>
                 </div>
 
                 <!-- Status Lencana Keselamatan -->
-                <div class="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-3.5 text-center shrink-0 shadow-inner min-w-[170px]">
-                    <span class="text-[9px] text-emerald-300/80 block uppercase font-bold tracking-widest mb-0.5">Tahap Keselamatan</span>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 text-center shrink-0 shadow-inner min-w-[170px]">
+                    <span class="text-[9px] text-emerald-300/90 block uppercase font-bold tracking-widest mb-0.5">Tahap Keselamatan</span>
                     <span class="text-xs font-bold text-white flex items-center justify-center gap-2">
                         <span class="relative flex h-2.5 w-2.5">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -85,7 +93,7 @@
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">
                             Kod / ID Peserta <span class="text-slate-400 font-normal">/ Participant ID</span>
                         </label>
-                        <input type="text" id="kodPeserta" required class="w-full rounded-xl border-slate-200 p-3 text-sm border bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none transition font-mono font-bold text-slate-800" placeholder="Cth: BIIIC-J-012">
+                        <input type="text" id="kodPeserta" required class="w-full rounded-xl border-slate-200 p-3 text-sm border bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none transition font-mono font-bold text-slate-800" placeholder="Cth: BIIC-J-012">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase mb-1">
@@ -99,7 +107,8 @@
                         </label>
                         <select id="kategori" class="w-full rounded-xl border-slate-200 p-3 text-sm border bg-slate-50/50 focus:bg-white focus:ring-2 focus:ring-emerald-500 focus:outline-none transition font-medium">
                             <option value="Junior">Junior (Sek. Rendah / Sek. Menengah / KV - SVM)</option>
-                            <option value="Tertiary">Tertiary & Profesional (IPTA / IPTS / ILKA / KV - DVM / Awam)</option>
+                            <option value="Tertiary">Tertiary (IPTA / IPTS / ILKA / KV - DVM)</option>
+                            <option value="Profesional">Profesional (Awam / Industri / Pensyarah / Agensi)</option>
                         </select>
                     </div>
                     <div>
@@ -114,41 +123,6 @@
                 </div>
             </div>
 
-            <!-- Panduan Penskoran (Collapsible) -->
-            <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50">
-                <button type="button" onclick="toggleGuide()" class="w-full text-left px-5 py-3.5 bg-slate-100/80 hover:bg-slate-200/60 flex justify-between items-center transition">
-                    <span class="font-bold text-slate-700 text-xs uppercase tracking-wider flex items-center gap-2">
-                        <span>📖</span> Panduan Rujukan Skala Penskoran / Scoring Criteria Reference Guide
-                    </span>
-                    <span id="guideIcon" class="text-slate-400 text-xs">▼</span>
-                </button>
-                <div id="guideContent" class="hidden p-5 text-xs text-slate-600 space-y-3 bg-white border-t border-slate-200">
-                    <p class="font-medium text-slate-500">Panduan skala pemarkahan mengikut julat / Benchmark rubric guide:</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
-                        <div class="p-3 bg-red-50/60 border border-red-100 rounded-xl">
-                            <span class="font-bold text-red-700 block mb-0.5">1 - 20% | Sangat Lemah / Very Poor</span>
-                            Sangat lemah, gagal memenuhi keperluan asas projek.
-                        </div>
-                        <div class="p-3 bg-amber-50/60 border border-amber-100 rounded-xl">
-                            <span class="font-bold text-amber-700 block mb-0.5">21 - 40% | Memuaskan / Fair</span>
-                            Memenuhi kriteria minima, asas teknikal masih lemah.
-                        </div>
-                        <div class="p-3 bg-blue-50/60 border border-blue-100 rounded-xl">
-                            <span class="font-bold text-blue-700 block mb-0.5">41 - 60% | Baik / Good</span>
-                            Konsep memuaskan, prototaip berfungsi dengan selari tema.
-                        </div>
-                        <div class="p-3 bg-teal-50/60 border border-teal-100 rounded-xl">
-                            <span class="font-bold text-teal-700 block mb-0.5">61 - 80% | Sangat Baik / Very Good</span>
-                            Nilai inovasi tinggi, pelaksanaan teknikal & persembahan mantap.
-                        </div>
-                        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl md:col-span-2">
-                            <span class="font-bold text-emerald-800 block mb-0.5">81 - 100% | Cemerlang / Excellent</span>
-                            Keaslian sangat tinggi, prototaip berfungsi sepenuhnya, berpotensi komersial & penyampaian terbaik.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- Seksyen Rubrik Pemarkahan -->
             <div>
                 <div class="border-b border-slate-100 pb-3 mb-6">
@@ -156,7 +130,7 @@
                     <p class="text-xs text-slate-500 mt-0.5" id="rubricDesc"></p>
                 </div>
 
-                <div id="rubricFields" class="space-y-4"></div>
+                <div id="rubricFields" class="space-y-6"></div>
             </div>
 
             <!-- Feedback -->
@@ -183,7 +157,7 @@
 
         <!-- Footer -->
         <div class="bg-slate-50 border-t border-slate-100 p-4 text-center text-xs text-slate-400 font-medium">
-            Borneo Innovation and Invention Competition (BIIIC 4.0) • Digital Assessment System v1.0
+            Borneo Innovation and Invention Competition (BIIC 4.0) • Digital Assessment System v1.0
         </div>
     </div>
 
@@ -216,18 +190,6 @@
             }
         };
 
-        function toggleGuide() {
-            const content = document.getElementById('guideContent');
-            const icon = document.getElementById('guideIcon');
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.innerText = '▲';
-            } else {
-                content.classList.add('hidden');
-                icon.innerText = '▼';
-            }
-        }
-
         function switchRubric() {
             const stage = document.getElementById('peringkat').value;
             const currentRubric = rubrics[stage];
@@ -236,17 +198,42 @@
 
             const container = document.getElementById('rubricFields');
             container.innerHTML = '';
+            
             currentRubric.criteria.forEach(item => {
                 container.innerHTML += `
-                    <div class="p-4 bg-slate-50/80 rounded-xl border border-slate-200/80 hover:border-emerald-300 transition">
+                    <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition shadow-sm">
                         <div class="flex justify-between items-center mb-1">
-                            <label class="font-bold text-slate-800 text-sm">${item.label}</label>
-                            <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-lg">
-                                <span id="val_${item.id}" class="text-sm">0</span> / ${item.max} pts
+                            <label class="font-bold text-slate-800 text-sm md:text-base">${item.label}</label>
+                            <span class="text-xs font-bold text-emerald-800 bg-emerald-100/90 border border-emerald-200 px-3 py-1 rounded-lg shrink-0">
+                                <span id="val_${item.id}" class="text-sm font-extrabold">0</span> / ${item.max} pts
                             </span>
                         </div>
-                        <p class="text-xs text-slate-500 mb-3">${item.desc}</p>
-                        <input type="range" id="${item.id}" min="0" max="${item.max}" value="0" oninput="updateScore()" class="rubric-slider w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                        <p class="text-xs text-slate-500 mb-4">${item.desc}</p>
+                        
+                        <!-- Slider Input -->
+                        <input type="range" id="${item.id}" min="0" max="${item.max}" value="0" oninput="updateScore()" class="rubric-slider w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 mb-4">
+                        
+                        <!-- PANDUAN SKALA RUJUKAN DIBAWAH SOALAN -->
+                        <div class="bg-white p-3 rounded-xl border border-slate-200/60 shadow-inner">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 block mb-2">📌 Panduan Skala Rujukan Juri (Theme Scoring Scale):</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5 text-[11px]">
+                                <div class="px-2 py-1 bg-red-50 text-red-700 rounded border border-red-100 font-medium">
+                                    <strong class="font-bold">0:</strong> Tidak mengikut tema
+                                </div>
+                                <div class="px-2 py-1 bg-amber-50 text-amber-800 rounded border border-amber-100 font-medium">
+                                    <strong class="font-bold">1 - 5:</strong> Ada unsur tema tetapi samar
+                                </div>
+                                <div class="px-2 py-1 bg-blue-50 text-blue-800 rounded border border-blue-100 font-medium">
+                                    <strong class="font-bold">6 - 10:</strong> Unsur tema cuba ditampilkan
+                                </div>
+                                <div class="px-2 py-1 bg-teal-50 text-teal-800 rounded border border-teal-100 font-medium">
+                                    <strong class="font-bold">11 - 15:</strong> Terdapat salah satu unsur tema
+                                </div>
+                                <div class="px-2 py-1 bg-emerald-50 text-emerald-800 rounded border border-emerald-200 font-bold sm:col-span-2 md:col-span-2">
+                                    <strong>16 - 20:</strong> Terdapat kedua-dua tema (AI & Green Tech)
+                                </div>
+                            </div>
+                        </div>
                     </div>`;
             });
             updateScore();
