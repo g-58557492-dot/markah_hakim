@@ -47,7 +47,7 @@
                                 Portal Penilaian Rasmi / Official Portal
                             </span>
                             <span class="bg-teal-400/20 text-teal-200 border border-teal-400/30 text-[10px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
-                                Versi 1.0
+                                Versi 2.0 (Rubrik Rasmi)
                             </span>
                         </div>
                         <h1 class="text-2xl md:text-4xl font-black tracking-tight text-white drop-shadow-lg">
@@ -146,7 +146,7 @@
                 <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-white/5 rounded-full blur-2xl"></div>
                 <span class="text-xs font-bold uppercase tracking-widest text-emerald-200 block mb-1">JUMLAH MARKAH KESELURUHAN / GRAND TOTAL SCORE</span>
                 <div class="text-5xl font-black tracking-tight my-1"><span id="totalScore">0</span> <span class="text-xl font-normal text-emerald-200">/ 100</span></div>
-                <p class="text-[11px] text-emerald-100/70 mt-1">Markah dikira secara automatik berdasarkan pemberat rubrik.</p>
+                <p class="text-[11px] text-emerald-100/70 mt-1">Markah dikira secara automatik berdasarkan pemberat rubrik rasmi.</p>
             </div>
 
             <!-- Butang Hantar -->
@@ -157,35 +157,155 @@
 
         <!-- Footer -->
         <div class="bg-slate-50 border-t border-slate-100 p-4 text-center text-xs text-slate-400 font-medium">
-            Borneo Innovation and Invention Competition (BIIC 4.0) • Digital Assessment System v1.0
+            Borneo Innovation and Invention Competition (BIIC 4.0) • Digital Assessment System v2.0
         </div>
     </div>
 
     <!-- JavaScript Logic -->
     <script>
-        const SCRIPT_URL = "GANTIKAN_DENGAN_GOOGLE_SCRIPT_URL_ANDA";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxf0tpyGLtcHvuW7a5envVEvfnXZ1p18NxI6cE_MKNKDySfSLrV9EChfx0Cku5slAD/exec";
 
         const rubrics = {
             preliminary: {
                 title: "Rubrik Penilaian Peringkat Awal / Preliminary Stage Rubric",
-                desc: "Menilai cadangan awal, konsep inovasi utama, kualiti dokumentasi, dan video pitch.",
+                desc: "Menilai cadangan awal, konsep inovasi utama, kualiti dokumentasi, dan video pitch berdasarkan panduan rasmi.",
                 criteria: [
-                    { id: "k1", label: "1. Keaslian & Relevansi Tema / Originality & Theme Alignment", max: 20, desc: "Keaslian idea dan keselarasan dengan tema AI & Green Tech." },
-                    { id: "k2", label: "2. Nilai Inovasi & Impak / Innovation Value & Impact", max: 25, desc: "Keunikan dan potensi menyelesaikan masalah sebenar." },
-                    { id: "k3", label: "3. Kualiti Produk & Keberfungsian / Product Quality & Functionality", max: 25, desc: "Boleh laksana, kualiti binaan prototaip, dan logik operasi." },
-                    { id: "k4", label: "4. Persembahan & Penyampaian Video / Presentation & Video Pitch", max: 20, desc: "Kejelasan persembahan video, struktur, dan kelancaran komunikasi." },
-                    { id: "k5", label: "5. Dokumentasi & Rekabentuk Poster / Documentation & Poster Design", max: 10, desc: "Kelengkapan visual poster, struktur data, dan kejelasan maklumat." }
+                    { 
+                        id: "k1", 
+                        label: "1. Keaslian & Relevansi Tema / Originality & Theme Alignment", 
+                        max: 20, 
+                        desc: "Keaslian idea dan keselarasan dengan tema AI & Green Tech[cite: 2].",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tidak mengikut tema langsung. Tiada unsur AI atau Green Tech[cite: 2]." },
+                            { range: "1-5", title: "Sangat Lemah", desc: "Ada unsur tema tetapi samar. Idea tidak asli atau kaitannya sangat kabur[cite: 2]." },
+                            { range: "6-10", title: "Sederhana", desc: "Unsur tema cuba ditampilkan tetapi kurang jelas, umum, atau gabungan idea kurang kukuh[cite: 2]." },
+                            { range: "11-15", title: "Baik", desc: "Terdapat salah satu unsur tema (AI atau Green Tech sahaja) secara jelas dan teratur[cite: 2]." },
+                            { range: "16-20", title: "Cemerlang", desc: "Terdapat kedua-dua tema digabungkan secara sangat kreatif, asli, dan holistik[cite: 2]." }
+                        ]
+                    },
+                    { 
+                        id: "k2", 
+                        label: "2. Nilai Inovasi & Impak / Innovation Value & Impact", 
+                        max: 25, 
+                        desc: "Keunikan dan potensi menyelesaikan masalah sebenar[cite: 2].",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada unsur inovasi, idea tiruan sepenuhnya, dan tidak mampu menyelesaikan masalah[cite: 2]." },
+                            { range: "1-6", title: "Sangat Lemah", desc: "Keunikan sangat rendah, penambahbaikan minima, dan potensi penyelesaian terhad[cite: 2]." },
+                            { range: "7-12", title: "Sederhana", desc: "Mempunyai keunikan asas tetapi impak penyelesaian kurang nyata atau liputan kecil[cite: 2]." },
+                            { range: "13-18", title: "Baik", desc: "Inovasi kukuh, ada keunikan tersendiri, berpotensi menyelesaikan masalah dunia sebenar[cite: 2]." },
+                            { range: "19-25", title: "Cemerlang", desc: "Inovasi sangat unik, berdaya saing tinggi, bernilai komersial/sosial, dan berimpak signifikan[cite: 2]." }
+                        ]
+                    },
+                    { 
+                        id: "k3", 
+                        label: "3. Kualiti Produk & Keberfungsian / Product Quality & Functionality", 
+                        max: 25, 
+                        desc: "Boleh laksana, kualiti binaan prototaip, dan logik operasi[cite: 2].",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Projek tidak boleh dilaksanakan, prototaip tidak berfungsi, atau logik operasi gagal[cite: 2]." },
+                            { range: "1-6", title: "Sangat Lemah", desc: "Boleh dilaksanakan secara teori sahaja, binaan amat lemah, banyak ralat, logik tidak teratur[cite: 2]." },
+                            { range: "7-12", title: "Sederhana", desc: "Prototaip berfungsi sebahagian sahaja; logik operasi masih mempunyai kekangan teknikal[cite: 2]." },
+                            { range: "13-18", title: "Baik", desc: "Kualiti binaan prototaip baik, boleh dilaksanakan dengan selamat, logik jelas, stabil[cite: 2]." },
+                            { range: "19-25", title: "Cemerlang", desc: "Prototaip sangat kukuh/stabil, kualiti tinggi, logik cemerlang, berfungsi sepenuhnya[cite: 2]." }
+                        ]
+                    },
+                    { 
+                        id: "k4", 
+                        label: "4. Persembahan & Penyampaian Video / Presentation & Video Pitch", 
+                        max: 20, 
+                        desc: "Kejelasan persembahan video, struktur, dan kelancaran komunikasi[cite: 2].",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada video pitch atau bahan persembahan disediakan[cite: 2]." },
+                            { range: "1-5", title: "Sangat Lemah", desc: "Penyampaian sangat lemah, bercelaru, tidak berstruktur, gagal menyampaikan mesej[cite: 2]." },
+                            { range: "6-10", title: "Sederhana", desc: "Penerangan asas ada tetapi kurang menarik/meyakinkan, kualiti suntingan video lemah[cite: 2]." },
+                            { range: "11-15", title: "Baik", desc: "Persembahan jelas, teratur, mengikut tempoh masa, kualiti video pitch memuaskan[cite: 2]." },
+                            { range: "16-20", title: "Cemerlang", desc: "Penyampaian profesional, kreatif, berkeyakinan tinggi, struktur video pitch cemerlang[cite: 2]." }
+                        ]
+                    },
+                    { 
+                        id: "k5", 
+                        label: "5. Dokumentasi & Rekabentuk Poster / Documentation & Poster Design", 
+                        max: 10, 
+                        desc: "Kelengkapan visual poster, struktur data, dan kejelasan maklumat[cite: 2].",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada poster atau dokumen sokongan disediakan[cite: 2]." },
+                            { range: "1-2", title: "Sangat Lemah", desc: "Kelengkapan visual sangat lemah, maklumat sukar dibaca, tiada susunan struktur data[cite: 2]." },
+                            { range: "3-5", title: "Sederhana", desc: "Visual dan struktur data asas ada, tetapi susun atur padat dan maklumat kurang jelas[cite: 2]." },
+                            { range: "6-8", title: "Baik", desc: "Rekabentuk poster menarik, visual lengkap, struktur tersusun baik, maklumat mudah difahami[cite: 2]." },
+                            { range: "9-10", title: "Cemerlang", desc: "Visual poster amat lengkap, rekabentuk profesional, struktur data cemerlang, jelas[cite: 2]." }
+                        ]
+                    }
                 ]
             },
             final: {
                 title: "Rubrik Penilaian Peringkat Akhir / Final Stage Rubric",
                 desc: "Menilai demonstrasi prototaip secara langsung, pertahanan teknikal, dan kebolehpasaran.",
                 criteria: [
-                    { id: "k1", label: "1. Prototaip Sebenar & Keberfungsian Teknikal / Live Prototype & Functionality", max: 30, desc: "Pelaksanaan masa nyata, kestabilan, dan integrasi elemen teknikal." },
-                    { id: "k2", label: "2. Inovasi, Nilai Komersial & Kebolehlaksanaan / Commercial Value & Feasibility", max: 25, desc: "Potensi komersialisasi, kecekapan kos, dan kesediaan pasaran." },
-                    { id: "k3", label: "3. Persembahan Lisan & Persediaan Booth / Oral Pitch & Booth Setup", max: 20, desc: "Profesionalisme penyampaian, susun atur booth, dan daya tarikan visual." },
-                    { id: "k4", label: "4. Sesi Soal Jawab & Penguasaan / Q&A Defense & Mastery", max: 15, desc: "Kedalaman pengetahuan domain, penyelesaian masalah, dan keyakinan." },
-                    { id: "k5", label: "5. Data Pengesahan & Buku Log / Verification Data & Logbook", max: 10, desc: "Ketepatan data ujian, rekod buku log, dan metrik sokongan." }
+                    { 
+                        id: "k1", 
+                        label: "1. Prototaip Sebenar & Keberfungsian Teknikal / Live Prototype & Functionality", 
+                        max: 30, 
+                        desc: "Pelaksanaan masa nyata, kestabilan, dan integrasi elemen teknikal.",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada demo langsung atau prototaip gagal diuji sepenuhnya." },
+                            { range: "1-8", title: "Sangat Lemah", desc: "Demo tidak stabil, banyak ralat teknikal semasa pembentangan." },
+                            { range: "9-16", title: "Sederhana", desc: "Prototaip berfungsi sebahagian dengan bantuan sokongan manual." },
+                            { range: "17-23", title: "Baik", desc: "Prototaip berfungsi dengan baik, stabil, dan lancar semasa demo." },
+                            { range: "24-30", title: "Cemerlang", desc: "Prototaip berfungsi sepenuhnya secara langsung, sangat stabil & canggih." }
+                        ]
+                    },
+                    { 
+                        id: "k2", 
+                        label: "2. Inovasi, Nilai Komersial & Kebolehlaksanaan / Commercial Value & Feasibility", 
+                        max: 25, 
+                        desc: "Potensi komersialisasi, kecekapan kos, dan kesediaan pasaran.",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada potensi komersial atau nilai pasaran." },
+                            { range: "1-6", title: "Sangat Lemah", desc: "Potensi pasaran sangat samar dan analisis kos tidak realistik." },
+                            { range: "7-12", title: "Sederhana", desc: "Mempunyai potensi asas tetapi perancangan pasaran masih terhad." },
+                            { range: "13-18", title: "Baik", desc: "Potensi komersial jelas, kebolehlaksanaan tinggi, kos munasabah." },
+                            { range: "19-25", title: "Cemerlang", desc: "Potensi pasaran global/luas, unjuran komersial sangat kukuh & bernilai tinggi." }
+                        ]
+                    },
+                    { 
+                        id: "k3", 
+                        label: "3. Persembahan Lisan & Persediaan Booth / Oral Pitch & Booth Setup", 
+                        max: 20, 
+                        desc: "Profesionalisme penyampaian, susun atur booth, dan daya tarikan visual.",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada pembentangan atau susun atur booth." },
+                            { range: "1-5", title: "Sangat Lemah", desc: "Penyampaian lemah, booth tidak kemas dan kurang menarik." },
+                            { range: "6-10", title: "Sederhana", desc: "Penyampaian sederhana, susun atur booth asas." },
+                            { range: "11-15", title: "Baik", desc: "Penyampaian profesional, booth kemas, menarik dan teratur." },
+                            { range: "16-20", title: "Cemerlang", desc: "Sangat karismatik, booth luar biasa menarik, interaksi hebat." }
+                        ]
+                    },
+                    { 
+                        id: "k4", 
+                        label: "4. Sesi Soal Jawab & Penguasaan / Q&A Defense & Mastery", 
+                        max: 15, 
+                        desc: "Kedalaman pengetahuan domain, penyelesaian masalah, dan keyakinan.",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Gagal menjawab soalan atau tidak hadir sesi soal jawab." },
+                            { range: "1-4", title: "Sangat Lemah", desc: "Gagal mempertahankan projek dan kurang kefahaman teknikal." },
+                            { range: "5-8", title: "Sederhana", desc: "Menjawab sebahagian soalan dengan bimbingan panel." },
+                            { range: "9-12", title: "Baik", desc: "Menjawab soalan dengan yakin, jelas, dan berpengetahuan." },
+                            { range: "13-15", title: "Cemerlang", desc: "Penguasaan domain penuh, menjawab dengan bernas dan sangat meyakinkan." }
+                        ]
+                    },
+                    { 
+                        id: "k5", 
+                        label: "5. Data Pengesahan & Buku Log / Verification Data & Logbook", 
+                        max: 10, 
+                        desc: "Ketepatan data ujian, rekod buku log, dan metrik sokongan.",
+                        scales: [
+                            { range: "0", title: "Tidak Sesuai", desc: "Tiada buku log atau data pengesahan." },
+                            { range: "1-2", title: "Sangat Lemah", desc: "Buku log tidak lengkap atau data pengesahan meragukan." },
+                            { range: "3-5", title: "Sederhana", desc: "Data ujian asas ada tetapi rekod buku log kurang teratur." },
+                            { range: "6-8", title: "Baik", desc: "Data ujian lengkap, buku log diselenggara dengan baik." },
+                            { range: "9-10", title: "Cemerlang", desc: "Data pengesahan sangat terperinci, buku log profesional dan sahih." }
+                        ]
+                    }
                 ]
             }
         };
@@ -200,6 +320,19 @@
             container.innerHTML = '';
             
             currentRubric.criteria.forEach(item => {
+                let scalesHtml = '';
+                item.scales.forEach(s => {
+                    scalesHtml += `
+                        <div class="p-2 bg-white rounded-lg border border-slate-200/60 shadow-sm flex flex-col justify-between">
+                            <div>
+                                <span class="inline-block px-2 py-0.5 bg-emerald-100 text-emerald-900 font-extrabold text-[10px] rounded mb-1">${s.range} markah</span>
+                                <strong class="block text-slate-800 text-[11px] font-bold">${s.title}</strong>
+                            </div>
+                            <p class="text-slate-500 text-[10px] mt-1 leading-tight">${s.desc}</p>
+                        </div>
+                    `;
+                });
+
                 container.innerHTML += `
                     <div class="p-5 bg-slate-50/80 rounded-2xl border border-slate-200/80 hover:border-emerald-300 transition shadow-sm">
                         <div class="flex justify-between items-center mb-1">
@@ -213,25 +346,11 @@
                         <!-- Slider Input -->
                         <input type="range" id="${item.id}" min="0" max="${item.max}" value="0" oninput="updateScore()" class="rubric-slider w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 mb-4">
                         
-                        <!-- PANDUAN SKALA RUJUKAN DIBAWAH SOALAN -->
-                        <div class="bg-white p-3 rounded-xl border border-slate-200/60 shadow-inner">
-                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-slate-400 block mb-2">📌 Panduan Skala Rujukan Juri (Theme Scoring Scale):</span>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1.5 text-[11px]">
-                                <div class="px-2 py-1 bg-red-50 text-red-700 rounded border border-red-100 font-medium">
-                                    <strong class="font-bold">0:</strong> Tidak mengikut tema
-                                </div>
-                                <div class="px-2 py-1 bg-amber-50 text-amber-800 rounded border border-amber-100 font-medium">
-                                    <strong class="font-bold">1 - 5:</strong> Ada unsur tema tetapi samar
-                                </div>
-                                <div class="px-2 py-1 bg-blue-50 text-blue-800 rounded border border-blue-100 font-medium">
-                                    <strong class="font-bold">6 - 10:</strong> Unsur tema cuba ditampilkan
-                                </div>
-                                <div class="px-2 py-1 bg-teal-50 text-teal-800 rounded border border-teal-100 font-medium">
-                                    <strong class="font-bold">11 - 15:</strong> Terdapat salah satu unsur tema
-                                </div>
-                                <div class="px-2 py-1 bg-emerald-50 text-emerald-800 rounded border border-emerald-200 font-bold sm:col-span-2 md:col-span-2">
-                                    <strong>16 - 20:</strong> Terdapat kedua-dua tema (AI & Green Tech)
-                                </div>
+                        <!-- PANDUAN SKALA RUJUKAN KHUSUS DIBAWAH SOALAN -->
+                        <div class="bg-slate-100/80 p-3.5 rounded-xl border border-slate-200/70 shadow-inner">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 block mb-2.5">📌 Panduan Skala Rujukan & Perincian Juri:</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                                ${scalesHtml}
                             </div>
                         </div>
                     </div>`;
